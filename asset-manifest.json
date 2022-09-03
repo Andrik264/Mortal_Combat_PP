@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Mortal_Combat_PP/static/css/main.4af28af3.css",
+    "main.js": "/Mortal_Combat_PP/static/js/main.382869e3.js",
+    "index.html": "/Mortal_Combat_PP/index.html",
+    "main.4af28af3.css.map": "/Mortal_Combat_PP/static/css/main.4af28af3.css.map",
+    "main.382869e3.js.map": "/Mortal_Combat_PP/static/js/main.382869e3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4af28af3.css",
+    "static/js/main.382869e3.js"
+  ]
+}
