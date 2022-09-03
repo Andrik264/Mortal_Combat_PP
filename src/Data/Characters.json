@@ -1,57 +1,71 @@
 [
 	{ 
+    "id": 1,
     "name": "Goro",
     "picture": "Pictures/Characters/Goro.png"
   },
 	{ 
+    "id": 2,
     "name": "Johnny Cage" ,
     "picture": "Pictures/Characters/Johnny Cage.png"
   },
 	{ 
+    "id": 3,
     "name": "Kano",
     "picture": "Pictures/Characters/Kano.png"
   },
-	{ 
+	{
+    "id": 4, 
     "name": "Liu Kang" ,
     "picture": "Pictures/Characters/Liu Kang.png"
   },
 	{ 
+    "id": 5,
     "name": "Raiden" ,
     "picture": "Pictures/Characters/Raiden.png"
   },
-	{ 
+	{
+    "id": 6, 
     "name": "Reptile" ,
     "picture": "Pictures/Characters/Reptile.png"
   },
-	{ 
+	{
+    "id": 7, 
     "name": "Scorpion" ,
     "picture": "Pictures/Characters/Scorpion.png"
   },
 	{ 
+    "id": 8,
     "name": "Shang Tsung" ,
     "picture": "Pictures/Characters/Shang Tsung.png"
   },
 	{
+    "id": 9,
     "name": "Sonya Blade",
     "picture": "Pictures/Characters/Sonya Blade.png"
   },
 	{
+    "id": 10,
     "name": "Sub-Zero",
     "picture": "Pictures/Characters/Sub-Zero.png"
   },
 	{
+    "id": 11,
     "name": "Baraka",
     "picture": "Pictures/Characters/Baraka.png"
   },
 	{
+    "id": 12,
     "name": "Jade",
     "picture": "Pictures/Characters/Jade.png"
   },
 	{
+    "id": 13,
     "name": "Jax",
     "picture": "Pictures/Characters/Jax.png"
   },
 	{
+    "id": 14,
     "name": "Kintaro",
     "picture": "Pictures/Characters/Kintaro.png"
   }
