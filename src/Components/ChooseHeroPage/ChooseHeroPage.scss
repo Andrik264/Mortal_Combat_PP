@@ -1,0 +1,39 @@
+.HeroesPage {
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://t4.ftcdn.net/jpg/03/99/55/57/360_F_399555768_facLZEz0rD5YhJxTO9Z2UEaH1r4sMams.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+  }
+
+
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-rows: repeat(auto-fill, 150px);
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      border: 3px solid red;
+
+      &--is-focused {
+        border-color: green;
+      }
+    }
+
+    .hero_picture {
+      object-fit: cover;
+      object-position: top center;
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
