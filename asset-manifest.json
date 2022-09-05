@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/Mortal_Combat_PP/static/css/main.4af28af3.css",
-    "main.js": "/Mortal_Combat_PP/static/js/main.382869e3.js",
+    "main.css": "/Mortal_Combat_PP/static/css/main.6b3aca0d.css",
+    "main.js": "/Mortal_Combat_PP/static/js/main.7798c3e4.js",
+    "static/media/Player Select.mp3": "/Mortal_Combat_PP/static/media/Player Select.7ba5fbf41e90aeefa0c5.mp3",
+    "static/media/Vs-Screen-BGC.JPG": "/Mortal_Combat_PP/static/media/Vs-Screen-BGC.e8cfd6f35da601f5baec.JPG",
+    "static/media/VS-Screen.mp3": "/Mortal_Combat_PP/static/media/VS-Screen.f4bc7aa4c2074f17a271.mp3",
     "index.html": "/Mortal_Combat_PP/index.html",
-    "main.4af28af3.css.map": "/Mortal_Combat_PP/static/css/main.4af28af3.css.map",
-    "main.382869e3.js.map": "/Mortal_Combat_PP/static/js/main.382869e3.js.map"
+    "main.6b3aca0d.css.map": "/Mortal_Combat_PP/static/css/main.6b3aca0d.css.map",
+    "main.7798c3e4.js.map": "/Mortal_Combat_PP/static/js/main.7798c3e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.4af28af3.css",
-    "static/js/main.382869e3.js"
+    "static/css/main.6b3aca0d.css",
+    "static/js/main.7798c3e4.js"
   ]
 }
