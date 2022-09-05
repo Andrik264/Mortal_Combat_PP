@@ -1,6 +1,11 @@
 .HeroesPage {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   height: 100vh;
+  padding: 10px;
   background-image: url('https://t4.ftcdn.net/jpg/03/99/55/57/360_F_399555768_facLZEz0rD5YhJxTO9Z2UEaH1r4sMams.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,6 +13,8 @@
   &__container {
     display: grid;
     grid-template-columns: 200px 1fr 200px;
+    padding: 50px 10px;
+    flex-grow: 1;
   }
 
 

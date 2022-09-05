@@ -1,10 +1,10 @@
-import { ChooseHeroPage } from './Components/ChooseHeroPage';
+import { PageProvider } from './Components/PageContext';
+import { CharactersProvider } from './Components/CharactersContext';
 
 export default function App() {
-
   return (
-    <div className="App">
-      <ChooseHeroPage />
-    </div>
+    <CharactersProvider>
+      <PageProvider />
+    </CharactersProvider>
   );
 }

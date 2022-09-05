@@ -1,0 +1,15 @@
+.VS-Screen {
+  background-image: url('../../../public/Pictures/Vs-Screen-BGC.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  display: grid;
+  grid-template-columns: 1fr 30% 1fr;
+  grid-template-rows: 100vh;
+
+  &__hero-preview-container {
+    height: min-content;
+    align-self: flex-end;
+  }
+}
