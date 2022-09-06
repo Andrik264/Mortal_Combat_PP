@@ -4,93 +4,195 @@ import React, {
   useEffect,
   useCallback,
   useContext,
+  useMemo,
 } from 'react';
 import classNames from 'classnames';
 
 import { PageContext } from '../PageContext';
+import { CharactersContext } from '../CharactersContext';
 import { Pages } from '../../Types/PageContext';
 
 import { CharacterPreview } from '../CharacterPreview';
 
 import { Character } from '../../Types/Character';
-const Characters = require('../../Data/Characters.json');
+
 const backgroundSong = require('../../static/Sounds/Player Select.mp3');
 
-const arrowKeysCodes = {
+const keyCodes = {
   left: 'ArrowLeft',
   right: 'ArrowRight',
   up: 'ArrowUp',
   down: 'ArrowDown',
+  enter: 'Enter',
+  cancel: 'Escape',
+}
+const COLUMNS_PER_ROW = 5;
+
+function createMatrix(items: any[], itemsPerRow: number) {
+  const result = [];
+  let row = [];
+
+  for (let i = 0; i < items.length; i++) {
+    if (row.length === itemsPerRow) {
+      result.push(row);
+      row = [];
+    }
+
+    row.push(items[i]);
+  }
+
+  if (row.length) {
+    result.push(row);
+  }
+
+  return result;
 }
 
 export const ChooseHeroPage = () => {
-  const focusedHeroByDefault = Characters[0];
-  const [focusedHero, setFocusedHero] = useState(focusedHeroByDefault);
-  const [fisrtSelectedHero, setFirstHero] = useState<Character | null>(null);
-  const selectedSecondHero = Characters[5];
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
   const { setPage } = useContext(PageContext);
+  const {
+    characters,
+    selectedHeroes,
+    setFirstHero,
+  } = useContext(CharactersContext);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const charactersMatric = useMemo<Character[][]>(
+    () => createMatrix(characters, COLUMNS_PER_ROW),
+    [characters],
+  );
+  const focusedHero = useMemo(() => {
+    const { x, y } = position;
+    return charactersMatric[y][x];
+  }, [charactersMatric, position]);
 
   const handleHeroSelect = useCallback((event: KeyboardEvent) => {
-    switch(event.code) {
-      case arrowKeysCodes.left:
-        setPosition({ ...position, x: position.x-- });
-        break;
-      case arrowKeysCodes.right:
-        setPosition({ ...position, x: position.x++ });
-        break;
-      case arrowKeysCodes.up:
-        setPosition({ ...position, y: position.y++ });
-        break;
-      case arrowKeysCodes.down:
-        setPosition({ ...position, y: position.y-- });
-        break;
+    if (!selectedHeroes.firstHero) {
+      const step = 1;
+      let nextPosition;
+      let t_NP; // temporary_nextPosition
+
+      const firstRowIndex_Y = 0;
+      const lastRowIndex_Y = charactersMatric.length - 1;
+
+      const firstColumnIndex_X = 0;
+      const lastColumnIndex_X = charactersMatric[position.y].length - 1;
+
+      switch(event.code) {
+        case keyCodes.left:
+          t_NP = position.x - step;
+          nextPosition = { x: t_NP >= firstColumnIndex_X
+            ? t_NP
+            : lastColumnIndex_X
+          };
+          break;
+
+        case keyCodes.right:
+          t_NP = position.x + step;
+          nextPosition = { x: t_NP <= lastColumnIndex_X
+            ? t_NP
+            : firstColumnIndex_X
+          };
+          break;
+
+        case keyCodes.up:
+          t_NP = position.y - step;
+          nextPosition = { y: t_NP >= firstRowIndex_Y
+            ? t_NP
+            : lastRowIndex_Y
+          };
+          break;
+
+        case keyCodes.down:
+          t_NP = position.y + step;
+          nextPosition = { y: t_NP <= lastRowIndex_Y
+            ? t_NP
+            : firstRowIndex_Y
+          };
+          break;
+  
+        case keyCodes.enter:
+          setFirstHero(focusedHero);
+          setPage(Pages.VsScreen);
+          break;
+  
+        default:
+          return;
+      }
+
+      setPosition({ ...position, ...nextPosition });
     }
 
-    console.log(position);
+  }, [
+    position,
+    selectedHeroes,
+    focusedHero,
+    charactersMatric,
+    setFirstHero,
+    setPage,
+  ]);
+
+  useEffect(() => {
+    setFirstHero(null);
   }, []);
-  
+
   useEffect(() => {
     document.addEventListener('keydown', handleHeroSelect);
-    // const backGroundAudio = new Audio(backgroundSong);
-    // backGroundAudio.play();
 
-    return () => document.removeEventListener('keydown', handleHeroSelect);
+    return () => {
+      document.removeEventListener('keydown', handleHeroSelect);
+    }
+  }, [handleHeroSelect]);
+  
+  useEffect(() => {
+    const backGroundAudio = new Audio(backgroundSong);
+    const playSong = () => {
+      backGroundAudio.play();
+      backGroundAudio.volume = 0.1;
+    }
+
+    playSong();
+    backGroundAudio.addEventListener('ended', playSong)
+
+    return () => {
+      backGroundAudio.removeEventListener('ended', playSong);
+
+      backGroundAudio.pause();
+    }
   }, []);
 
   return (
     <div className="HeroesPage">
-      <h1>Select your fighter</h1>
-      <button type='button' onClick={() => {
-        console.log('clickkkkk');
-        
-        setPage(Pages.VsScreen)
-      }}>
-        Press me
-      </button>
+      <h1 className='HeroesPage__title'>Choose your fighter</h1>
       <div className='HeroesPage__container'>
-        <CharacterPreview character={focusedHero} />
+        <CharacterPreview character={selectedHeroes.firstHero || focusedHero} />
 
         <ul className='HeroesPage__list'>
-          {Characters.map((character: Character) => (
-            <li
-              key={character.id}
-              className={classNames(
-                'HeroesPage__list-item',
-                { 'HeroesPage__list-item--is-focused': focusedHero.id === character.id },
-              )}
-            >
-              <img
-                className='hero_picture'
-                src={character.picture}
-                alt={character.name}
-              />
-            </li>
-          ))}
+          {charactersMatric.map((row: Character[], rowIndex: number) => {
+            return row.map((character: Character, columnIndex: number) => (
+              <li
+                key={character.id}
+                className={classNames(
+                  'HeroesPage__list-item',
+                  `HeroesPage__list-item--pos-${rowIndex}${columnIndex}`,
+                  { 'HeroesPage__list-item--is-focused': !selectedHeroes.firstHero
+                    && focusedHero.id === character.id },
+                  { 'HeroesPage__list-item--is-selected-by-1':
+                  selectedHeroes.firstHero?.id === character.id },
+                  { 'HeroesPage__list-item--is-selected-by-2':
+                  selectedHeroes.secondHero?.id === character.id },
+                )}
+              >
+                <img
+                  className='hero_picture'
+                  src={character.picture}
+                  alt={character.name}
+                />
+              </li>
+            ))
+          })}
         </ul>
 
-        <CharacterPreview character={selectedSecondHero} />
+        <CharacterPreview character={selectedHeroes.secondHero} />
       </div>
     </div>
   )

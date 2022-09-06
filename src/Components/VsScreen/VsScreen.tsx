@@ -9,11 +9,15 @@ import { CombatCodes } from '../CombatCodes';
 const backgroundSong = require('../../static/Sounds/VS-Screen.mp3');
 
 export const VsScreen = () => {
-  const { selectedHeroes } = useContext(CharactersContext);
+  const {
+    selectedHeroes: { firstHero, secondHero },
+    randomHeroes: { firstRandomHero, SecondRandomHero },
+  } = useContext(CharactersContext);
 
   useEffect(() => {
     const backGroundAudio = new Audio(backgroundSong);
     backGroundAudio.play();
+    backGroundAudio.volume = 0.1;
 
     return () => backGroundAudio.pause();
   }, []);
@@ -21,13 +25,13 @@ export const VsScreen = () => {
   return (
     <div className="VS-Screen">
       <div className="VS-Screen__hero-preview-container">
-        <CharacterPreview character={selectedHeroes.firstHero} />
+        <CharacterPreview character={firstHero || firstRandomHero} />
       </div>
 
       <CombatCodes />
 
       <div className="VS-Screen__hero-preview-container">
-        <CharacterPreview character={selectedHeroes.secondHero} />
+        <CharacterPreview character={secondHero || SecondRandomHero} />
       </div>
     </div>
   );

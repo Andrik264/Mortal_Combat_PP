@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { DefaultContextType, PageContextType, Pages } from '../../Types/PageContext';
-// import { ChooseHeroPage } from './Components/ChooseHeroPage';
 import { VsScreen } from '../VsScreen';
 import { ChooseHeroPage } from '../ChooseHeroPage';
 
@@ -17,11 +16,14 @@ export const PageProvider = () => {
 
   const contextValue = useMemo(() => ({
     page,
-    setPage,
-    // setPage: (newPage: Pages) => {
-    //   console.log('PAGES CONTEXT', newPage);
-    //   return setPage(newPage);
-    // }
+    setPage: async (newPage: Pages) => {
+      return new Promise((res ) => {
+        setTimeout(() => {
+          setPage(newPage);
+          res(newPage);
+        }, 2000);
+      });
+    }
   }), [page]);
 
   
