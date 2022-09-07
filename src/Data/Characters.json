@@ -2,76 +2,76 @@
 	{ 
     "id": 1,
     "name": "Goro",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Goro.png"
+    "picture": "Pictures/Characters/Goro.png"
   },
 	{ 
     "id": 2,
     "name": "Johnny Cage" ,
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Johnny Cage.png"
+    "picture": "Pictures/Characters/Johnny Cage.png"
   },
 	{ 
     "id": 3,
     "name": "Kano",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Kano.png"
+    "picture": "Pictures/Characters/Kano.png"
   },
 	{
     "id": 4, 
     "name": "Liu Kang" ,
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Liu Kang.png"
+    "picture": "Pictures/Characters/Liu Kang.png"
   },
 	{ 
     "id": 5,
     "name": "Raiden" ,
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Raiden.png"
+    "picture": "Pictures/Characters/Raiden.png"
   },
 	{
     "id": 6, 
     "name": "Reptile" ,
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Reptile.png"
+    "picture": "Pictures/Characters/Reptile.png"
   },
 	{
     "id": 7, 
     "name": "Scorpion" ,
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Scorpion.png"
+    "picture": "Pictures/Characters/Scorpion.png"
   },
 	{ 
     "id": 8,
     "name": "Shang Tsung" ,
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Shang Tsung.png"
+    "picture": "Pictures/Characters/Shang Tsung.png"
   },
 	{
     "id": 9,
     "name": "Sonya Blade",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Sonya Blade.png"
+    "picture": "Pictures/Characters/Sonya Blade.png"
   },
 	{
     "id": 10,
     "name": "Sub-Zero",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Sub-Zero.png"
+    "picture": "Pictures/Characters/Sub-Zero.png"
   },
 	{
     "id": 11,
     "name": "Baraka",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Baraka.png"
+    "picture": "Pictures/Characters/Baraka.png"
   },
 	{
     "id": 12,
     "name": "Jade",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Jade.png"
+    "picture": "Pictures/Characters/Jade.png"
   },
 	{
     "id": 13,
     "name": "Jax",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Jax.png"
+    "picture": "Pictures/Characters/Jax.png"
   },
 	{
     "id": 14,
     "name": "Kintaro",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Kintaro.png"
+    "picture": "Pictures/Characters/Kintaro.png"
   },
 	{
     "id": 15,
     "name": "Smoke",
-    "picture": "Mortal_Combat_PP/Pictures/Characters/Smoke.png"
+    "picture": "Pictures/Characters/Smoke.png"
   }
 ]

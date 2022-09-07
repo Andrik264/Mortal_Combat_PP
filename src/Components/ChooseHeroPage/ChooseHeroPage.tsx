@@ -154,7 +154,6 @@ export const ChooseHeroPage = () => {
 
     return () => {
       backGroundAudio.removeEventListener('ended', playSong);
-
       backGroundAudio.pause();
     }
   }, []);

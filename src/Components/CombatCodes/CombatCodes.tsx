@@ -7,6 +7,15 @@ import { useEffect } from 'react';
 import { CombatCodes as CombatCodesType } from '../../Types/CombatCodes';
 import { CombatCode as CombatCodeType } from '../../Types/CombatCode';
 
+const COMBAT_KEY_CODES = {
+  q: 'KeyQ',
+  w: 'KeyW',
+  e: 'KeyE',
+  r: 'KeyR',
+  t: 'KeyT',
+  y: 'KeyY',
+}
+
 export const CombatCodes = () => {
   const [codes, setCodes] = useState<CombatCodesType>({
     q: 0,
@@ -26,13 +35,6 @@ export const CombatCodes = () => {
     const iconNextNumber = currentIconNumber === maxIconNumber
       ? 0
       : currentIconNumber + 1;
-    // let iconNextNumber;
-
-    // if (currentIconNumber === maxIconNumber) {
-    //   iconNextNumber = 0;
-    // } else {
-    //   iconNextNumber = currentIconNumber;
-    // }
 
     return iconNextNumber;
   }, [])
@@ -44,27 +46,22 @@ export const CombatCodes = () => {
     }
 
     switch(e.code) {
-      case 'KeyQ':
+      case COMBAT_KEY_CODES.q:
         set('q');
         break;
-
-      case 'KeyW':
+      case COMBAT_KEY_CODES.w:
         set('w');
         break;
-
-      case 'KeyE':
+      case COMBAT_KEY_CODES.e:
         set('e');
         break;
-
-      case 'KeyR':
+      case COMBAT_KEY_CODES.r:
         set('r');
         break;
-
-      case 'KeyT':
+      case COMBAT_KEY_CODES.t:
         set('t');
         break;
-
-      case 'KeyY':
+      case COMBAT_KEY_CODES.y:
         set('y');
         break;
 
@@ -72,12 +69,6 @@ export const CombatCodes = () => {
         return;
     }
     e.preventDefault();
-    // console.group('Event');
-    // console.log('code:', e.code);
-    // console.log('key:', e.key);
-    // console.log('codes', codes);
-    // console.groupEnd();
-
   }, [codes, getIconNextNumber]);
 
   useEffect(() => {
