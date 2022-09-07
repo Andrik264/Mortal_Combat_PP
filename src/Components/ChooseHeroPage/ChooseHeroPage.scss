@@ -1,0 +1,96 @@
+@import '../../Styles/variables.scss';
+@import '../../Styles/placeholders.scss';
+@import '../../Styles/mixins.scss';
+
+.HeroesPage {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  background-image: url('../../../public/Pictures/backgrounds/ChooseHeroPage-BGC.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__title {
+    @extend %mortal-combat_text-style;
+
+    text-align: center;
+    font-size: 4rem;
+    margin: 20px 0 0 0;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 50px 10px;
+    flex-grow: 1;
+  }
+
+  &__preview-hero {
+    &-1 {
+      color: $orange-color;
+    }
+    &-2 {
+      color: $green-color;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 200px));
+    grid-template-rows: repeat(3, minmax(150px, 200px));
+
+    justify-content: center;
+    align-self: center;
+    gap: $grid-gap;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+
+      background: radial-gradient(ellipse at center, #000000 0%, #414141 68%, #343434 100%);
+      box-shadow: -10px 0px 13px -7px #000000,
+                   10px 0px 13px -7px #000000,
+                   0px 0px 15px 10px rgba(0,0,0,0.44);
+      transition: all 0.5s linear;
+      overflow: hidden;
+
+      &--is-selected-by-1 {
+        border: $grid-gap solid $orange-color;
+      }
+      &--is-selected-by-2 {
+        border: $grid-gap solid $green-color;
+      }
+      &--is-selected-by-both {
+        border: $grid-gap solid;
+        border-color: $multi-border-colors;
+      }
+      &--is-focused {
+        border: 6px solid;
+        transform: scale(1.1);
+
+        @include animateBorderPinging(singleColorAnimation);
+      }
+
+      &--is-selected-by-2.HeroesPage__list-item--is-focused {
+        border-width: $grid-gap;
+        border-color: $multi-border-colors;
+        @include animateBorderPinging(multiColorAnimation);
+      }
+    }
+
+    .hero_picture {
+      object-fit: cover;
+      object-position: top;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

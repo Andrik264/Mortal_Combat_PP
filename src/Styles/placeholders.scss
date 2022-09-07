@@ -1,0 +1,10 @@
+@import './fonts-family.scss';
+
+%mortal-combat_text-style {
+  font-family: 'MortalCombat';
+  -webkit-text-stroke-width: 1.8px;
+  -webkit-text-stroke-color: #131010;
+  -webkit-text-fill-color: #d42a00;
+  letter-spacing: 6px;
+  text-shadow: 11px -9px 8px rgba(12, 11, 11, 0.9);
+}

@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Mortal Combat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was written by React library, using SCSS and BEM technology.
+In this project were used promises, BEM, SCSS, React technologies, Context.
+* - [Demo LINK](https://andrik264.github.io/Mortal_Combat_PP)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+It is a web-page which is implemented as original "Mortal Combat 3" game.
+There are 2 pages:
+1. Choose hero page.
+  Page where you can choose a champion you want to play.
+2. VS Screen.
+  A screen which shows you a preview screen before battle with "Combat Codes".
 
-### `npm start`
+### Additional info
+  - Choose a champion by ArrowKeys.
+  - In 2 seconds after choosing a champ - the delay the VS Screen will be displayed.
+  - Use `QWERTY` keyboard buttons to toggle a combat code.
+  - There are 9 symbols per cell.
+  - Reload a page to change second selected champion by default.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Abilities
+You are given to do some interesing things, such as:
+1. Moving at grid
+  Move by champions grid by Arrow keys and see the champion preview.
+  After choosing a champion in 2 seconds delay will be displayed a VS screen.
+2. Combat Codes
+  In 4 seconds while VS Screen is displayed you are able
+  to make some combinations at combat codes to unlock
+  special features during the battle.
+  Use `QWERTY` keyboard buttons to change them.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Local development
 
-### `npm test`
+### Dependencies
+* Node v12.16.3 and higher
+* NPM v6.14.4 and higher
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Installing
+* Fork and clone this repository
+* Run `npm install` in your terminal
+* Run `npm start`
+* Switch to a new branch `git checkout -b *any name*`

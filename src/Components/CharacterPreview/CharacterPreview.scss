@@ -1,0 +1,21 @@
+@import '../../Styles/placeholders.scss';
+
+.Hero-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  &__name {
+    @extend %mortal-combat_text-style;
+
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: 600px
+  }
+}

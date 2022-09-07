@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+@keyframes singleColorAnimation {
+  0% {
+    border-color: $orange-color;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: $orange-color;
+  }
+}
+
+@keyframes multiColorAnimation {
+  0% {
+    border-color: $multi-border-colors;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: $multi-border-colors;
+  }
+}
