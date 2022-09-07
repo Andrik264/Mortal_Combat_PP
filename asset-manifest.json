@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Mortal_Combat_PP/static/css/main.65870e87.css",
-    "main.js": "/Mortal_Combat_PP/static/js/main.6c9eb138.js",
+    "main.js": "/Mortal_Combat_PP/static/js/main.5fd98823.js",
     "static/media/Player Select.mp3": "/Mortal_Combat_PP/static/media/Player Select.7ba5fbf41e90aeefa0c5.mp3",
     "static/media/Vs-Screen-BGC.JPG": "/Mortal_Combat_PP/static/media/Vs-Screen-BGC.e8cfd6f35da601f5baec.JPG",
     "static/media/ChooseHeroPage-BGC.JPG": "/Mortal_Combat_PP/static/media/ChooseHeroPage-BGC.2f6bb77bc650cb8114f6.JPG",
@@ -9,10 +9,10 @@
     "static/media/CREEPSTER-REGULAR.TTF": "/Mortal_Combat_PP/static/media/CREEPSTER-REGULAR.7e29388744fe1602e58c.TTF",
     "index.html": "/Mortal_Combat_PP/index.html",
     "main.65870e87.css.map": "/Mortal_Combat_PP/static/css/main.65870e87.css.map",
-    "main.6c9eb138.js.map": "/Mortal_Combat_PP/static/js/main.6c9eb138.js.map"
+    "main.5fd98823.js.map": "/Mortal_Combat_PP/static/js/main.5fd98823.js.map"
   },
   "entrypoints": [
     "static/css/main.65870e87.css",
-    "static/js/main.6c9eb138.js"
+    "static/js/main.5fd98823.js"
   ]
 }
