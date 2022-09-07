@@ -66,62 +66,61 @@ export const ChooseHeroPage = () => {
   }, [charactersMatric, position]);
 
   const handleHeroSelect = useCallback((event: KeyboardEvent) => {
-    if (!selectedHeroes.firstHero) {
-      const step = 1;
-      let nextPosition;
-      let t_NP; // temporary_nextPosition
+    if (selectedHeroes.firstHero) return;
 
-      const firstRowIndex_Y = 0;
-      const lastRowIndex_Y = charactersMatric.length - 1;
+    const step = 1;
+    let nextPosition;
+    let t_NP; // temporary_nextPosition
 
-      const firstColumnIndex_X = 0;
-      const lastColumnIndex_X = charactersMatric[position.y].length - 1;
+    const firstRowIndex_Y = 0;
+    const lastRowIndex_Y = charactersMatric.length - 1;
 
-      switch(event.code) {
-        case keyCodes.left:
-          t_NP = position.x - step;
-          nextPosition = { x: t_NP >= firstColumnIndex_X
-            ? t_NP
-            : lastColumnIndex_X
-          };
-          break;
+    const firstColumnIndex_X = 0;
+    const lastColumnIndex_X = charactersMatric[position.y].length - 1;
 
-        case keyCodes.right:
-          t_NP = position.x + step;
-          nextPosition = { x: t_NP <= lastColumnIndex_X
-            ? t_NP
-            : firstColumnIndex_X
-          };
-          break;
+    switch(event.code) {
+      case keyCodes.left:
+        t_NP = position.x - step;
+        nextPosition = { x: t_NP >= firstColumnIndex_X
+          ? t_NP
+          : lastColumnIndex_X
+        };
+        break;
 
-        case keyCodes.up:
-          t_NP = position.y - step;
-          nextPosition = { y: t_NP >= firstRowIndex_Y
-            ? t_NP
-            : lastRowIndex_Y
-          };
-          break;
+      case keyCodes.right:
+        t_NP = position.x + step;
+        nextPosition = { x: t_NP <= lastColumnIndex_X
+          ? t_NP
+          : firstColumnIndex_X
+        };
+        break;
 
-        case keyCodes.down:
-          t_NP = position.y + step;
-          nextPosition = { y: t_NP <= lastRowIndex_Y
-            ? t_NP
-            : firstRowIndex_Y
-          };
-          break;
-  
-        case keyCodes.enter:
-          setFirstHero(focusedHero);
-          setPage(Pages.VsScreen);
-          break;
-  
-        default:
-          return;
-      }
+      case keyCodes.up:
+        t_NP = position.y - step;
+        nextPosition = { y: t_NP >= firstRowIndex_Y
+          ? t_NP
+          : lastRowIndex_Y
+        };
+        break;
 
-      setPosition({ ...position, ...nextPosition });
+      case keyCodes.down:
+        t_NP = position.y + step;
+        nextPosition = { y: t_NP <= lastRowIndex_Y
+          ? t_NP
+          : firstRowIndex_Y
+        };
+        break;
+
+      case keyCodes.enter:
+        setFirstHero(focusedHero);
+        setPage(Pages.VsScreen);
+        break;
+
+      default:
+        return;
     }
 
+    setPosition({ ...position, ...nextPosition });
   }, [
     position,
     selectedHeroes,
@@ -177,9 +176,13 @@ export const ChooseHeroPage = () => {
                   { 'HeroesPage__list-item--is-focused': !selectedHeroes.firstHero
                     && focusedHero.id === character.id },
                   { 'HeroesPage__list-item--is-selected-by-1':
-                  selectedHeroes.firstHero?.id === character.id },
+                    selectedHeroes.firstHero?.id === character.id },
                   { 'HeroesPage__list-item--is-selected-by-2':
-                  selectedHeroes.secondHero?.id === character.id },
+                    selectedHeroes.secondHero?.id === character.id },
+                  { 'HeroesPage__list-item--is-selected-by-both':
+                    selectedHeroes.firstHero?.id === character.id
+                    && selectedHeroes.secondHero?.id === character.id
+                  },
                 )}
               >
                 <img
